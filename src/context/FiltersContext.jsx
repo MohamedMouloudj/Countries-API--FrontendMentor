@@ -129,8 +129,10 @@ const reducer = (state, action) => {
 };
 
 function FiltersContextProvider({ children }) {
-  const [{ error, isLoading, filteredCountries, selectedCountry }, dispatch] =
-    useReducer(reducer, initialState);
+  const [
+    { error, isLoading, filteredCountries, selectedCountry, originalCountries },
+    dispatch,
+  ] = useReducer(reducer, initialState);
 
   function searchFilterControl(query, region) {
     if (!query && !region) {
@@ -148,6 +150,7 @@ function FiltersContextProvider({ children }) {
   }
 
   async function getCountries() {
+    if (originalCountries) return;
     try {
       dispatch({ type: "loading" });
       const response = await fetch(`${BASE_URL}all`);

@@ -7,12 +7,14 @@ function Countries() {
   const { filteredCountries: countries, isLoading } = useFiltersContext();
 
   return (
-    <main className={styles.countriesContainer}>
+    <>
       {isLoading && <Loader />}
-      {countries?.map((country) => (
-        <CountryItem key={country.name} country={country} />
-      ))}
-    </main>
+      <main className={styles.countriesContainer}>
+        {countries?.map((country) => (
+          <CountryItem key={country.name} country={country} />
+        ))}
+      </main>
+    </>
   );
 }
 

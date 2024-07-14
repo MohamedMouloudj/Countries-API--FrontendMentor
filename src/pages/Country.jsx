@@ -10,6 +10,7 @@ function Country() {
   const countryName = useUrlCountry();
   const { getCountry, selectedCountry, isLoading } = useFiltersContext();
   useEffect(() => {
+    if (!countryName) return;
     getCountry(countryName);
   }, [countryName]);
 

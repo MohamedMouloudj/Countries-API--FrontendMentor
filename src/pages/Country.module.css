@@ -65,9 +65,13 @@
 .bordersContainer {
   display: flex;
   gap: 1rem;
-  align-items: center;
+  align-items: start;
   justify-content: start;
   width: 100%;
+}
+.bordersContainer h3 {
+  flex: 1;
+  max-width: max-content;
 }
 .borders {
   flex: 1;
