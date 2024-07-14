@@ -1,0 +1,35 @@
+.filtersContainer {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 0 6rem;
+}
+
+.dropContinents {
+  margin: 0;
+  padding: 1rem;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background-color: var(--background-color);
+  border-color: var(--background-color);
+  box-shadow: 0 0 10px -1px rgba(0, 0, 0, 0.1);
+}
+
+.dropContinents:focus {
+  outline: none;
+}
+
+.dropContinents option {
+  height: 50px;
+}
+
+@media screen and (max-width: 375px) {
+  .filtersContainer {
+    flex-direction: column;
+    align-items: start;
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+}

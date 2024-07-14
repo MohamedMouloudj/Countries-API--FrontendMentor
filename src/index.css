@@ -1,0 +1,100 @@
+@import url("https://fonts.google.com/specimen/Nunito+Sans");
+
+:root {
+  --color-dark-blue: hsl(209, 23%, 22%);
+  --color-very-dark-blue-1: hsl(207, 26%, 17%);
+  --color-very-dark-blue-2: hsl(200, 15%, 8%);
+  --color-dark-grayish: hsl(0, 0%, 52%);
+  --color-light-grayish: hsl(0, 0%, 98%);
+  --color-white: hsl(0, 0%, 100%);
+
+  --background-color: var(--color-light-grayish);
+  --text-color: var(--color-very-dark-blue-2);
+  --element-color: var(--color-white);
+
+  --font-weight-regular: 300;
+  --font-weight-medium: 600;
+  --font-weight-bold: 700;
+  --font-family: "Nunito Sans", sans-serif;
+
+  --font-size-large: 24px;
+  --font-size-big: 20px;
+  --font-size-medium: 16px;
+  --font-size-small: 14px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+button {
+  font-family: inherit;
+  cursor: pointer;
+  background-color: var(--element-color);
+}
+
+h2 {
+  font-size: var(--font-size-large);
+  font-weight: var(--font-weight-bold);
+  cursor: pointer;
+}
+h3 {
+  font-size: var(--font-size-big);
+  font-weight: var(--font-weight-bold);
+  text-wrap: wrap;
+  display: flex;
+  max-width: 150px;
+}
+
+.toggle-checkbox {
+  display: none;
+}
+
+ion-searchbar.searchBar {
+  flex: 1;
+  height: min-content;
+  max-width: 50%;
+  border: none;
+  border-radius: 5px;
+
+  --background: var(--element-color);
+  --color: var(--text-color);
+  --placeholder-color: var(--text-color);
+  --icon-color: var(--text-color);
+  --clear-button-color: var(--text-color);
+  --box-shadow: 0 0 10px -1px rgba(0, 0, 0, 0.1);
+}
+
+ion-searchbar.md.searchBar {
+  --cancel-button-color: var(--text-color);
+}
+
+html:has(.toggle-checkbox:checked) {
+  --background-color: var(--color-very-dark-blue-1);
+  --text-color: var(--color-white);
+  --element-color: var(--color-dark-blue);
+  color: var(--color-white);
+}
+
+@media screen and (max-width: 375px) {
+  h2 {
+    font-size: var(--font-size-big);
+    font-weight: var(--font-weight-medium);
+  }
+  h3 {
+    font-weight: var(--font-weight-regular);
+  }
+
+  ion-searchbar.searchBar {
+    max-width: 100%;
+    padding: 0;
+  }
+}

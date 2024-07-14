@@ -1,0 +1,15 @@
+.countriesContainer {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, 20%);
+  column-gap: 4%;
+  row-gap: 4rem;
+  justify-content: center;
+}
+
+@media screen and (max-width: 375px) {
+  .countriesContainer {
+    grid-template-columns: 1fr;
+    row-gap: 2rem;
+  }
+}
